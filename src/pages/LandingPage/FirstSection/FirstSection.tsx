@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
-import Astronaut from '../../../assets/atomic-astronaut.png';
-import ChevronDown from '../../../assets/chevron-down.png';
-import AtomicLogo from '../../../assets/atomic-labs-logo.png';
+import Astronaut from '../../../assets/icons/atomic-astronaut.png';
+import ChevronDown from '../../../assets/icons/chevron-down.png';
+import AtomicLogo from '../../../assets/icons/atomic-labs-logo.png';
 
 import './FirstSection.scss';
 
-function FirstSection() {
+const FirstSection: FunctionComponent = () => {
   return (
     <section className="first-section row">
       <div className="logo d-flex align-content-left">
@@ -17,7 +17,7 @@ function FirstSection() {
           <img src={Astronaut} alt="atomic-astronaut" />
         </div>
         <div className="col-lg-6 col-12 justify-content-center">
-          <p>
+          <p className="main-text">
             Desarrolla todo <br />
             <span>tu POTENCIAL</span>
             <br /> dentro del equipo <br />
@@ -35,6 +35,6 @@ function FirstSection() {
       </div>
     </section>
   );
-}
+};
 
 export default FirstSection;

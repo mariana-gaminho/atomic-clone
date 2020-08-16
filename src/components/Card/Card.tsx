@@ -7,7 +7,7 @@ type CardProps = {
   content: Array<any>;
   imageSrc: string;
   backgroundColor?: string;
-  titleColor: string;
+  titleColor?: string;
   contentColor?: string;
 };
 
@@ -17,18 +17,32 @@ const Card: FunctionComponent<CardProps> = ({
   imageSrc,
   backgroundColor = '#ffff',
   titleColor = '#f34c26',
-  contentColor = '#0000',
+  contentColor = 'black',
 }) => (
   <div
-    className="card d-flex justify-content-center flex-wrap"
+    className="card d-flex justify-content-center  align-content-center flex-wrap"
     style={{
       background: backgroundColor,
     }}
   >
     <img src={imageSrc} alt="card-icon" />
-    <p className="title" style={{ color: titleColor }}>
-      {title}
-    </p>
+    <div
+      className="title d-flex flex-wrap justify-content-center"
+      style={{ height: '20%' }}
+    >
+      <svg width="160px" height="10px" className="dashed-line">
+        <line
+          fill="none"
+          stroke={titleColor}
+          x1="0"
+          y1="0"
+          x2="159"
+          y2="0"
+          strokeDasharray="60 15 9 15"
+        />
+      </svg>
+      <p style={{ color: titleColor }}>{title}</p>
+    </div>
     <ul>
       {content.map((bullet) => (
         <li

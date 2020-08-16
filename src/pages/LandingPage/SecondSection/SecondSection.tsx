@@ -1,20 +1,40 @@
 import React, { FunctionComponent } from 'react';
 
 import Card from '../../../components/Card';
-import IdeaCloud from '../../../assets/idea-cloud.png';
+import SectionTitle from '../../../components/SectionTitle';
+import IdeaCloud from '../../../assets/icons/idea-cloud.png';
+import Planets from '../../../assets/icons/planets.png';
+import WorldFlag from '../../../assets/icons/world-flag.png';
 
 import './SecondSection.scss';
 
 const SecondSection: FunctionComponent = () => {
   return (
     <section className="second-section row" id="section-2">
+      <SectionTitle
+        content={
+          <p className="second-section-title">
+            SOMOS EL BRAZO DERECHO <br />
+            <span>DE LA TECNOLOGÍA</span>
+          </p>
+        }
+      />
       <div className="col-12 d-flex justify-content-center">
-        <p className="second-section-title">
-          SOMOS EL BRAZO DERECHO <br />
-          <span>DE LA TECNOLOGÍA</span>
-        </p>
-      </div>
-      <div className="col-12 d-flex justify-content-center">
+        <Card
+          title="EXPLORA"
+          imageSrc={Planets}
+          content={[
+            <p key="Creacion">
+              Innovación y <strong>creación Tecnológica</strong>
+            </p>,
+            <p key="UXUI">
+              <strong>UX / UI</strong>
+            </p>,
+            <p key="Innovacion">
+              <strong>Innovación</strong>
+            </p>,
+          ]}
+        />
         <Card
           title="IMAGINA"
           imageSrc={IdeaCloud}
@@ -33,6 +53,21 @@ const SecondSection: FunctionComponent = () => {
             </p>,
             <p key="Reduccion">
               <strong>Reducción </strong>de Costos TI
+            </p>,
+          ]}
+        />
+        <Card
+          title="CONQUISTA"
+          imageSrc={WorldFlag}
+          content={[
+            <p key="Desarrollo">
+              Desarrollo tecnológico<strong> a la medida</strong>
+            </p>,
+            <p key="Ciberseguridad">
+              <strong>Ciberseguridad</strong>
+            </p>,
+            <p key="Nube">
+              <strong>Servicios de la Nube</strong>
             </p>,
           ]}
         />

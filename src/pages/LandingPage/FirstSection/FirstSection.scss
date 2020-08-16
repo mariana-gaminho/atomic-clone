@@ -2,8 +2,8 @@
 
 .first-section {
   text-align: center;
-  background: url('../../../assets/space-background@2x.png') no-repeat center
-    center;
+  background: url('../../../assets/icons/space-background@2x.png') no-repeat
+    center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -24,9 +24,10 @@
   .join-atomic {
     width: 100%;
 
-    p {
+    .main-text {
       font-size: 4.37em;
-      font-weight: bold;
+      font-weight: 800;
+      line-height: 1.1em;
       color: #fff;
       span {
         color: $dark-orange;
