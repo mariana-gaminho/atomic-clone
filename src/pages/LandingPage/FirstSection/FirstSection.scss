@@ -1,0 +1,64 @@
+@import '../../../styles/constants.scss';
+
+.first-section {
+  text-align: center;
+  background: url('../../../assets/space-background@2x.png') no-repeat center
+    center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 3em;
+  background-color: #041731;
+  height: 100vh;
+
+  .logo {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    img {
+      max-height: 112px;
+    }
+  }
+
+  .join-atomic {
+    width: 100%;
+
+    p {
+      font-size: 4.37em;
+      font-weight: bold;
+      color: #fff;
+      span {
+        color: $dark-orange;
+      }
+    }
+
+    img {
+      max-width: 85%;
+      height: auto;
+    }
+
+    button {
+      width: 13em;
+      padding: 0.6em 0.6em;
+      background: #fff;
+      color: $light-blue;
+      font-size: 1.21em;
+      font-weight: bold;
+      border-radius: 20px;
+      border: none;
+    }
+    button:hover {
+      cursor: pointer;
+    }
+  }
+
+  .know-more {
+    p {
+      margin-top: -5px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.21em;
+    }
+  }
+}
