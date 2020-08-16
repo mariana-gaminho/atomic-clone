@@ -10,7 +10,7 @@ import './SecondSection.scss';
 
 const SecondSection: FunctionComponent = () => {
   return (
-    <section className="second-section row" id="section-2">
+    <section className="second-section" id="section-2">
       <SectionTitle
         content={
           <p className="second-section-title">
@@ -19,13 +19,16 @@ const SecondSection: FunctionComponent = () => {
           </p>
         }
       />
-      <div className="col-12 d-flex justify-content-center">
+      <div
+        className="d-flex justify-content-center align-items-center flex-wrap"
+        style={{ width: '100%' }}
+      >
         <Card
           title="EXPLORA"
           imageSrc={Planets}
           content={[
             <p key="Creacion">
-              Innovación y <strong>creación Tecnológica</strong>
+              Innovación y <strong>creación tecnológica</strong>
             </p>,
             <p key="UXUI">
               <strong>UX / UI</strong>
@@ -55,6 +58,11 @@ const SecondSection: FunctionComponent = () => {
               <strong>Reducción </strong>de Costos TI
             </p>,
           ]}
+          smallSize={false}
+          style={{
+            boxShadow: '0px 0px 21px 8px rgba(0,0,0,0.41)',
+            zIndex: 2,
+          }}
         />
         <Card
           title="CONQUISTA"

@@ -1,5 +1,7 @@
 @import '../../../styles/constants.scss';
 
+/* Mobile first */
+
 .first-section {
   text-align: center;
   background: url('../../../assets/icons/space-background@2x.png') no-repeat
@@ -8,16 +10,14 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding: 3em;
   background-color: #041731;
-  height: 100vh;
 
   .logo {
     margin: 0;
     padding: 0;
     width: 100%;
     img {
-      max-height: 112px;
+      max-height: 50px;
     }
   }
 
@@ -25,7 +25,7 @@
     width: 100%;
 
     .main-text {
-      font-size: 4.37em;
+      font-size: 2.2em;
       font-weight: 800;
       line-height: 1.1em;
       color: #fff;
@@ -55,11 +55,35 @@
   }
 
   .know-more {
-    p {
-      margin-top: -5px;
-      color: #fff;
-      font-weight: bold;
-      font-size: 1.21em;
+    display: none;
+  }
+
+  @media (min-width: 1px) {
+  }
+
+  /* Desktop screen Sizes */
+
+  @media only screen and (min-width: 800px) {
+    height: 100vh;
+    padding: 3em;
+    .logo {
+      img {
+        max-height: 112px;
+      }
+    }
+    .join-atomic {
+      .main-text {
+        font-size: 4.37em;
+      }
+    }
+    .know-more {
+      display: inline-block;
+      p {
+        margin-top: -5px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 1.21em;
+      }
     }
   }
 }

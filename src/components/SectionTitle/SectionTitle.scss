@@ -1,12 +1,17 @@
 @import '../../styles/constants.scss';
 
+/* Mobile first */
 .section-title {
   text-align: center;
-  font-size: 3.5em;
+  font-size: 2em;
   font-weight: 900;
   line-height: 1.1em;
   color: #fff;
   span {
     color: $dark-orange;
+  }
+  /* Desktop screen Sizes */
+  @media only screen and (min-width: 768px) {
+    font-size: 3.5em;
   }
 }
