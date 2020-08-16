@@ -1,2 +1,42 @@
 .third-section {
+  img {
+    width: 85%;
+  }
+  .steps {
+    width: 70%;
+    p {
+      color: #ffff;
+      font-size: 1em;
+      text-align: center;
+    }
+    svg {
+      display: none;
+    }
+  }
+  .third-section-join-button {
+    width: 100%;
+    margin-top: 20px;
+  }
+  @media only screen and (min-width: 800px) {
+    .steps {
+      svg {
+        display: inline;
+      }
+    }
+  }
+  @media only screen and (min-width: 1030px) {
+    img {
+      width: auto;
+    }
+    .steps {
+      width: 60%;
+      p {
+        width: 15%;
+        font-size: 1.5em;
+      }
+    }
+    .third-section-join-button {
+      margin-top: 2%;
+    }
+  }
 }

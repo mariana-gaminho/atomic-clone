@@ -1,0 +1,22 @@
+@import '../../styles/constants.scss';
+
+.join-button {
+  width: 13em;
+  padding: 0.5em 0.4em;
+  background: #fff;
+  color: $light-blue;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-radius: 40px;
+  border: none;
+  &:hover {
+    cursor: pointer;
+  }
+
+  /* Desktop screen Sizes */
+  @media only screen and (min-width: 800px) {
+    width: 13.5em;
+    padding: 0.6em 0.5em;
+    font-size: 1.4em;
+  }
+}

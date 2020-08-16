@@ -57,7 +57,7 @@ const Card: FunctionComponent<CardProps> = ({
             style={{ color: contentColor }}
             className="d-flex card-content"
           >
-            <div className="">
+            <div>
               <svg width="18px" height="18px" viewBox="0 0 18 18">
                 <circle
                   cx={smallSize ? '7' : '9'}

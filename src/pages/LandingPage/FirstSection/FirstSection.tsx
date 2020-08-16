@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react';
 
+import JoinButton from '../../../components/JoinButton';
 import Astronaut from '../../../assets/icons/atomic-astronaut.png';
 import ChevronDown from '../../../assets/icons/chevron-down.png';
 import AtomicLogo from '../../../assets/icons/atomic-labs-logo.png';
@@ -24,7 +25,7 @@ const FirstSection: FunctionComponent = () => {
             <span>ATOMIC</span>
             LABS
           </p>
-          <button className="join-button">¡Quiero ser parte!</button>
+          <JoinButton />
         </div>
       </div>
       <div className="know-more col-12">
