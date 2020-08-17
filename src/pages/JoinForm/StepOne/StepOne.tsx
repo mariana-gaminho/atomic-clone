@@ -13,12 +13,6 @@ import './StepOne.scss';
 class StepOne extends Component<StepProps> {
   constructor(props: any) {
     super(props);
-    this.handleInputChange = this.handleInputChange.bind(this);
-  }
-
-  handleInputChange(e: any) {
-    // @ts-ignore
-    this.setState({ [e.target.name]: e.target.value });
   }
 
   render() {
@@ -41,13 +35,15 @@ class StepOne extends Component<StepProps> {
           <div className="inputs">
             <InputWithLabel
               name="firstName"
-              onChange={(e) => this.handleInputChange(e)}
+              onChange={(e) => this.props.handleInputChange(e)}
               label="Nombre (s)"
+              value={firstName}
             />
             <InputWithLabel
               name="lastName"
-              onChange={(e) => this.handleInputChange(e)}
+              onChange={(e) => this.props.handleInputChange(e)}
               label="Apellidos"
+              value={lastName}
             />
           </div>
         </div>
@@ -57,6 +53,7 @@ class StepOne extends Component<StepProps> {
         <FormButton
           text="Enviar"
           onClick={() => this.props.changeStep(currentStep, 'next')}
+          disabled={firstName.length < 3 || lastName === ''}
         />
       </div>
     );

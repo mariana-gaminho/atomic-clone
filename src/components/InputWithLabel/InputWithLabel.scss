@@ -3,38 +3,40 @@
 .input-with-label {
   input {
     height: 40px;
-    width: 50%;
+    width: 100%;
     border: 1px solid #dae2eb;
-    border-radius: 2px;
+    border-radius: 3px;
     background-color: #ffff;
-    padding: 7px 10px;
+    padding: 12px;
     font-size: 1em;
     outline: none;
-    margin: 5px 0;
   }
 
   .input-label {
     color: #ffff;
+    margin-bottom: 7px;
   }
 
   .error-text {
-    text-align: right;
     color: $red;
+    margin: 2px;
+    font-size: 0.9em;
+    font-weight: bold;
   }
 
   .form-error {
     color: $red;
-    border-color: $red;
+    border: 2px solid $red;
   }
 
-  .labels {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
   @media only screen and (min-width: 760px) {
+    input {
+      height: 50px;
+      width: 50%;
+      font-size: 1.2em;
+    }
     .input-label {
-      font-size: 1.5em;
+      font-size: 1.4em;
     }
   }
 }

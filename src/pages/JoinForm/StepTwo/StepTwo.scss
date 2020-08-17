@@ -1,2 +1,32 @@
 .step-two {
+  width: 100%;
+  .go-back {
+    color: #ffff;
+    text-decoration: underline;
+    outline: none;
+    &:hover,
+    &:focus {
+      cursor: pointer;
+    }
+  }
+  .legend {
+    width: 100%;
+    color: #fff;
+  }
+  .inputs {
+    width: 100%;
+  }
+  .astronaut {
+    width: 80%;
+  }
+  @media only screen and (min-width: 760px) {
+    margin-top: 3em;
+    .legend {
+      font-size: 1.7em;
+      margin-top: -15px;
+    }
+    .astronaut {
+      width: auto;
+    }
+  }
 }

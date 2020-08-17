@@ -5,4 +5,7 @@ export type StepProps = {
   phoneNumber: number | undefined;
   verificationCode: number | undefined;
   changeStep: Function;
+  handleInputChange: Function;
+  // isInputValid: boolean;
+  // errorMessage: string;
 };

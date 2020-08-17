@@ -29,18 +29,43 @@ class JoinForm extends Component<{}, FormState> {
     };
     this.switchStep = this.switchStep.bind(this);
     this.changeStep = this.changeStep.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-  switchStep(changeStep: Function) {
+  switchStep(changeStep: Function, handleInputChange: Function) {
     switch (this.state.currentStep) {
       case 1:
-        return <StepOne changeStep={changeStep} {...this.state} />;
+        return (
+          <StepOne
+            changeStep={changeStep}
+            handleInputChange={handleInputChange}
+            {...this.state}
+          />
+        );
       case 2:
-        return <StepTwo changeStep={changeStep} {...this.state} />;
+        return (
+          <StepTwo
+            changeStep={changeStep}
+            handleInputChange={handleInputChange}
+            {...this.state}
+          />
+        );
       case 3:
-        return <StepThree changeStep={changeStep} {...this.state} />;
+        return (
+          <StepThree
+            changeStep={changeStep}
+            handleInputChange={handleInputChange}
+            {...this.state}
+          />
+        );
       case 4:
-        return <StepFour changeStep={changeStep} {...this.state} />;
+        return (
+          <StepFour
+            changeStep={changeStep}
+            handleInputChange={handleInputChange}
+            {...this.state}
+          />
+        );
     }
   }
 
@@ -56,6 +81,13 @@ class JoinForm extends Component<{}, FormState> {
     }
   }
 
+  handleInputChange(e: any) {
+    // @ts-ignore
+    this.setState({ [e.target.name]: e.target.value });
+  }
+
+  // handleInputValidation(e: any) {}
+
   render() {
     console.log(this.state);
     return (
@@ -67,7 +99,7 @@ class JoinForm extends Component<{}, FormState> {
             </Link>
           </div>
           <div className="d-flex justify-content-center">
-            {this.switchStep(this.changeStep)}
+            {this.switchStep(this.changeStep, this.handleInputChange)}
           </div>
         </div>
       </div>
