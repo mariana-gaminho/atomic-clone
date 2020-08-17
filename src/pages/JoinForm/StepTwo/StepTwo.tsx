@@ -51,6 +51,7 @@ class StepTwo extends Component<StepProps> {
               name="phoneNumber"
               onChange={(e) => this.props.handleInputChange(e)}
               label="Número de Celular"
+              value={phoneNumber}
             />
           </div>
         </div>

@@ -1,5 +1,6 @@
 .step-two {
   width: 100%;
+  height: fit-content;
   .go-back {
     color: #ffff;
     outline: none;
@@ -21,7 +22,6 @@
   }
   @media only screen and (min-width: 760px) {
     margin-top: 3em;
-    height: fit-content;
     .legend {
       font-size: 1.6em;
       span {

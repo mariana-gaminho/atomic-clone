@@ -5,7 +5,7 @@ import './InputWithLabel.scss';
 type Props = {
   onChange(e: any): void;
   onBlur?(e: any): void;
-  value?: string;
+  value?: string | number;
   name?: string;
   label: string;
   error?: string;
