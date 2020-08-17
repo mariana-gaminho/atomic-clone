@@ -1,0 +1,18 @@
+@import '../../styles/constants.scss';
+
+.form-button {
+  background: $dark-orange;
+  border-radius: 30px;
+  border: none;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 1.2em;
+  outline: none;
+  padding: 13px 70px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.disabled {
+  cursor: not-allowed;
+}

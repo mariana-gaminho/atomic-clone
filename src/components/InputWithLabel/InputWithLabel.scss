@@ -1,0 +1,40 @@
+@import '../../styles/constants.scss';
+
+.input-with-label {
+  input {
+    height: 40px;
+    width: 50%;
+    border: 1px solid #dae2eb;
+    border-radius: 2px;
+    background-color: #ffff;
+    padding: 7px 10px;
+    font-size: 1em;
+    outline: none;
+    margin: 5px 0;
+  }
+
+  .input-label {
+    color: #ffff;
+  }
+
+  .error-text {
+    text-align: right;
+    color: $red;
+  }
+
+  .form-error {
+    color: $red;
+    border-color: $red;
+  }
+
+  .labels {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  @media only screen and (min-width: 760px) {
+    .input-label {
+      font-size: 1.5em;
+    }
+  }
+}

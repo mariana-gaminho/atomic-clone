@@ -5,6 +5,9 @@ import NumberOne from '../../../assets/icons/num-one-orange@2x.png';
 import AstronautEating from '../../../assets/icons/astronaut-food.png';
 import FormTitle from '../../../components/FormTitle';
 import ProgressBar from '../../../components/ProgressBar';
+import FormButton from '../../../components/FormButton';
+import InputWithLabel from '../../../components/InputWithLabel';
+
 import './StepOne.scss';
 
 class StepOne extends Component<StepProps> {
@@ -19,9 +22,9 @@ class StepOne extends Component<StepProps> {
   }
 
   render() {
-    const { currentStep } = this.props;
+    const { currentStep, firstName, lastName } = this.props;
     return (
-      <div className="step-one row">
+      <div className="step-one row justify-content-center">
         <div className="col-lg-8 col-12 d-flex flex-wrap justify-content-start">
           <ProgressBar currentStep={currentStep} />
           <FormTitle
@@ -35,18 +38,26 @@ class StepOne extends Component<StepProps> {
           <p className="legend">
             Queremos saber que eres tú, por favor ingresa los siguientes datos:
           </p>
-          <input
-            type="text"
-            name="firstName"
-            onChange={(e) => this.handleInputChange(e)}
-          />
+          <div className="inputs">
+            <InputWithLabel
+              name="firstName"
+              onChange={(e) => this.handleInputChange(e)}
+              label="Nombre (s)"
+            />
+            <InputWithLabel
+              name="lastName"
+              onChange={(e) => this.handleInputChange(e)}
+              label="Apellidos"
+            />
+          </div>
         </div>
         <div className="col-lg-4 col-12 d-flex justify-content-center">
           <img src={AstronautEating} alt="astronaut" className="astronaut" />
         </div>
-        <button onClick={() => this.props.changeStep(currentStep, 'next')}>
-          Enviar
-        </button>
+        <FormButton
+          text="Enviar"
+          onClick={() => this.props.changeStep(currentStep, 'next')}
+        />
       </div>
     );
   }
