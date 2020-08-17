@@ -1,0 +1,24 @@
+@import '../../styles/constants.scss';
+
+.form-title {
+  p {
+    text-align: left;
+    font-size: 2em;
+    font-weight: 900;
+    line-height: 1.1em;
+    color: #fff;
+    span {
+      color: $dark-orange;
+    }
+  }
+  img {
+    margin-right: 1em;
+    max-width: 7%;
+  }
+  /* Desktop screen Sizes */
+  @media only screen and (min-width: 768px) {
+    p {
+      font-size: 3.4em;
+    }
+  }
+}

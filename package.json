@@ -8,11 +8,13 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@types/react-hooks-helper": "^1.6.2",
     "@types/react-router-dom": "^5.1.5",
     "bootstrap-scss": "^4.5.2",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-hooks-helper": "^1.6.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3"
   },

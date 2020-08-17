@@ -1582,6 +1582,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-hooks-helper@^1.6.2":
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@types/react-hooks-helper/-/react-hooks-helper-1.6.2.tgz#f34eaf545cccffc8f025f7136b5a89ad4bb394f8"
+  integrity sha512-2twvRpt6F6on+4zB+A2G0nbhyvgv5N8jVwws7K3wNxbkY3fpavgYB7q8o7cOCOg7JUK5Ql9ltL1GiB94BX8/uQ==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-router-dom@^5.1.5":
   version "5.1.5"
   resolved "https://registry.yarnpkg.com/@types/react-router-dom/-/react-router-dom-5.1.5.tgz#7c334a2ea785dbad2b2dcdd83d2cf3d9973da090"
@@ -8977,6 +8984,11 @@ react-error-overlay@^6.0.7:
   version "6.0.7"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.7.tgz#1dcfb459ab671d53f660a991513cb2f0a0553108"
   integrity sha512-TAv1KJFh3RhqxNvhzxj6LeT5NWklP6rDr2a0jaTfsZ5wSZWHOGeqQyejUp3xxLfPt2UpyJEcVQB/zyPcmonNFA==
+
+react-hooks-helper@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/react-hooks-helper/-/react-hooks-helper-1.6.0.tgz#d4105f8745471600b38dc450260d513553c883b1"
+  integrity sha512-DlyWQ99tgwyDdJfTihCXT6AftYymxhA2LS60vBCTOpclmjPxqDwDTLjVK0kbIc3XsgJvxkanW8TwHE0jrIB8hA==
 
 react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4:
   version "16.13.1"

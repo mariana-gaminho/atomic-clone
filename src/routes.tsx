@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-// eslint-disable-next-line import/no-unresolved
 import Home from './pages/LandingPage';
+import JoinForm from './pages/JoinForm';
 
-const Router = () => (
+const Router: FunctionComponent = () => (
   <BrowserRouter>
     <Switch>
-      <Route path="/" component={Home} />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/join-form" component={JoinForm} />
     </Switch>
   </BrowserRouter>
 );

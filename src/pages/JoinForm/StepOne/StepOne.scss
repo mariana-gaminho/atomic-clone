@@ -1,0 +1,19 @@
+.step-one {
+  width: 100%;
+  .legend {
+    width: 100%;
+    color: #fff;
+  }
+  .astronaut {
+    width: 80%;
+  }
+  @media only screen and (min-width: 760px) {
+    margin-top: 3em;
+    .legend {
+      font-size: 1.7em;
+    }
+    .astronaut {
+      width: auto;
+    }
+  }
+}
