@@ -49,7 +49,7 @@ class StepFour extends Component<StepProps> {
           />
         </div>
         <FormButton
-          text="Continuar"
+          text="Enviar"
           onClick={() => this.props.changeStep(currentStep, 'next')}
           // disabled={
           //   !verificationCode || verificationCode.toString().length < 6

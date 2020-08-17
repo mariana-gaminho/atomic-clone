@@ -6,7 +6,6 @@ import NumberThree from '../../../assets/icons/num-three-orange@2x.png';
 import FormTitle from '../../../components/FormTitle';
 import ProgressBar from '../../../components/ProgressBar';
 import FormButton from '../../../components/FormButton';
-import InputWithLabel from '../../../components/InputWithLabel';
 
 import './StepThree.scss';
 
@@ -45,7 +44,7 @@ class StepThree extends Component<StepProps> {
           <img src={AstronautMoon} alt="astronaut" className="astronaut" />
         </div>
         <FormButton
-          text="Continuar"
+          text="Validar código"
           onClick={() => this.props.changeStep(currentStep, 'next')}
           // disabled={
           //   !verificationCode || verificationCode.toString().length < 6
