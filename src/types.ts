@@ -6,6 +6,6 @@ export type StepProps = {
   verificationCode: number | undefined;
   changeStep: Function;
   handleInputChange: Function;
-  // isInputValid: boolean;
-  // errorMessage: string;
+  handleInputValidation: Function;
+  errorMessage: string | undefined;
 };

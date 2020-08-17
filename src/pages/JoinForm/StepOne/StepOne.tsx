@@ -16,7 +16,7 @@ class StepOne extends Component<StepProps> {
   }
 
   render() {
-    const { currentStep, firstName, lastName } = this.props;
+    const { currentStep, firstName, lastName, errorMessage } = this.props;
     return (
       <div className="step-one row justify-content-center">
         <div className="col-lg-8 col-12 d-flex flex-wrap justify-content-start">
@@ -36,8 +36,10 @@ class StepOne extends Component<StepProps> {
             <InputWithLabel
               name="firstName"
               onChange={(e) => this.props.handleInputChange(e)}
+              onBlur={(e) => this.props.handleInputValidation(e)}
               label="Nombre (s)"
               value={firstName}
+              error={errorMessage}
             />
             <InputWithLabel
               name="lastName"
@@ -53,7 +55,7 @@ class StepOne extends Component<StepProps> {
         <FormButton
           text="Enviar"
           onClick={() => this.props.changeStep(currentStep, 'next')}
-          disabled={firstName.length < 3 || lastName === ''}
+          disabled={firstName.length < 5 || lastName === ''}
         />
       </div>
     );

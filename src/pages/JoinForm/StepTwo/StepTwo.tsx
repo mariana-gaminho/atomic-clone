@@ -13,19 +13,16 @@ import './StepTwo.scss';
 class StepTwo extends Component<StepProps> {
   constructor(props: any) {
     super(props);
-    this.handleInputChange = this.handleInputChange.bind(this);
-  }
-
-  handleInputChange(e: any) {
-    // @ts-ignore
-    this.setState({ [e.target.name]: e.target.value });
   }
 
   render() {
     const { currentStep, phoneNumber } = this.props;
     return (
       <div className="step-two row justify-content-center">
-        <div className="col-lg-8 col-12 d-flex flex-wrap justify-content-start">
+        <div
+          className="col-lg-8 col-12 d-flex flex-wrap justify-content-start"
+          style={{ height: '100%' }}
+        >
           <ProgressBar currentStep={currentStep} />
           <div
             className="go-back"
@@ -33,7 +30,7 @@ class StepTwo extends Component<StepProps> {
             onClick={() => this.props.changeStep(currentStep, 'previous')}
             tabIndex={0}
           >
-            <p>Regresar</p>
+            <p>&lt;&nbsp;&nbsp;Regresar</p>
           </div>
           <FormTitle
             iconSrc={NumberTwo}
@@ -45,12 +42,14 @@ class StepTwo extends Component<StepProps> {
           />
           <p className="legend">
             Necesitamos validar tu número para continuar. <br />
-            Ingresa tu número a 10 dígitos y te enviaremos un código SMS.
+            <span>
+              Ingresa tu número a 10 dígitos y te enviaremos un código SMS.
+            </span>
           </p>
-          <div className="inputs">
+          <div className="input">
             <InputWithLabel
               name="phoneNumber"
-              onChange={(e) => this.handleInputChange(e)}
+              onChange={(e) => this.props.handleInputChange(e)}
               label="Número de Celular"
             />
           </div>
@@ -61,6 +60,7 @@ class StepTwo extends Component<StepProps> {
         <FormButton
           text="Continuar"
           onClick={() => this.props.changeStep(currentStep, 'next')}
+          disabled={!phoneNumber || phoneNumber.toString().length < 10}
         />
       </div>
     );

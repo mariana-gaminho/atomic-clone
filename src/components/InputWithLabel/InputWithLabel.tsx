@@ -11,7 +11,14 @@ type Props = {
   error?: string;
 };
 
-const InputWithLabel = ({ onChange, value, name, label, error }: Props) => (
+const InputWithLabel = ({
+  onChange,
+  onBlur,
+  value,
+  name,
+  label,
+  error,
+}: Props) => (
   <div className="input-with-label">
     <p className="input-label">{label}</p>
     <input
@@ -20,6 +27,7 @@ const InputWithLabel = ({ onChange, value, name, label, error }: Props) => (
       name={name}
       className={`form-input ${error ? 'form-error' : null}`}
       onChange={onChange}
+      onBlur={onBlur}
     />
     <p className="error-text">{error}</p>
   </div>

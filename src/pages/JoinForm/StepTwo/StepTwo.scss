@@ -2,10 +2,10 @@
   width: 100%;
   .go-back {
     color: #ffff;
-    text-decoration: underline;
     outline: none;
-    &:hover,
-    &:focus {
+    font-size: 1.1em;
+    width: 100%;
+    &:hover {
       cursor: pointer;
     }
   }
@@ -13,7 +13,7 @@
     width: 100%;
     color: #fff;
   }
-  .inputs {
+  .input {
     width: 100%;
   }
   .astronaut {
@@ -21,12 +21,20 @@
   }
   @media only screen and (min-width: 760px) {
     margin-top: 3em;
+    height: fit-content;
     .legend {
-      font-size: 1.7em;
-      margin-top: -15px;
+      font-size: 1.6em;
+      span {
+        font-size: 0.9em;
+      }
     }
     .astronaut {
       width: auto;
+      margin-top: -9em;
+    }
+
+    .form-title {
+      height: 8em;
     }
   }
 }

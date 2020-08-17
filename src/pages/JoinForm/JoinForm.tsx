@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import AtomicLogo from '../../assets/icons/atomic-labs-logo.png';
 import StepOne from './StepOne';
@@ -7,7 +8,6 @@ import StepThree from './StepThree';
 import StepFour from './StepFour';
 
 import './JoinForm.scss';
-import { Link } from 'react-router-dom';
 
 type FormState = {
   currentStep: number;
@@ -15,6 +15,7 @@ type FormState = {
   lastName: string;
   phoneNumber: number | undefined;
   verificationCode: number | undefined;
+  errorMessage: string | undefined;
 };
 
 class JoinForm extends Component<{}, FormState> {
@@ -26,57 +27,24 @@ class JoinForm extends Component<{}, FormState> {
       lastName: '',
       phoneNumber: undefined,
       verificationCode: undefined,
+      errorMessage: undefined,
     };
     this.switchStep = this.switchStep.bind(this);
     this.changeStep = this.changeStep.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
-  }
-
-  switchStep(changeStep: Function, handleInputChange: Function) {
-    switch (this.state.currentStep) {
-      case 1:
-        return (
-          <StepOne
-            changeStep={changeStep}
-            handleInputChange={handleInputChange}
-            {...this.state}
-          />
-        );
-      case 2:
-        return (
-          <StepTwo
-            changeStep={changeStep}
-            handleInputChange={handleInputChange}
-            {...this.state}
-          />
-        );
-      case 3:
-        return (
-          <StepThree
-            changeStep={changeStep}
-            handleInputChange={handleInputChange}
-            {...this.state}
-          />
-        );
-      case 4:
-        return (
-          <StepFour
-            changeStep={changeStep}
-            handleInputChange={handleInputChange}
-            {...this.state}
-          />
-        );
-    }
+    this.handleInputValidation = this.handleInputValidation.bind(this);
   }
 
   changeStep(currentStep: number, action: string) {
     if (action === 'next') {
       this.setState({
         currentStep: currentStep + 1,
+        errorMessage: undefined,
       });
     } else {
       this.setState({
         currentStep: currentStep - 1,
+        errorMessage: undefined,
       });
     }
   }
@@ -86,10 +54,56 @@ class JoinForm extends Component<{}, FormState> {
     this.setState({ [e.target.name]: e.target.value });
   }
 
-  // handleInputValidation(e: any) {}
+  handleInputValidation(e: any) {
+    if (e.target.name === 'firstName' && e.target.value.length < 5) {
+      this.setState({
+        errorMessage: 'El nombre deberá tener mínimo 5 caracteres',
+      });
+    } else this.setState({ errorMessage: undefined });
+  }
+
+  switchStep() {
+    switch (this.state.currentStep) {
+      case 1:
+        return (
+          <StepOne
+            changeStep={this.changeStep}
+            handleInputChange={this.handleInputChange}
+            handleInputValidation={this.handleInputValidation}
+            {...this.state}
+          />
+        );
+      case 2:
+        return (
+          <StepTwo
+            changeStep={this.changeStep}
+            handleInputChange={this.handleInputChange}
+            handleInputValidation={this.handleInputValidation}
+            {...this.state}
+          />
+        );
+      case 3:
+        return (
+          <StepThree
+            changeStep={this.changeStep}
+            handleInputChange={this.handleInputChange}
+            handleInputValidation={this.handleInputValidation}
+            {...this.state}
+          />
+        );
+      case 4:
+        return (
+          <StepFour
+            changeStep={this.changeStep}
+            handleInputChange={this.handleInputChange}
+            handleInputValidation={this.handleInputValidation}
+            {...this.state}
+          />
+        );
+    }
+  }
 
   render() {
-    console.log(this.state);
     return (
       <div className="join-form">
         <div className="custom-container">
@@ -99,7 +113,7 @@ class JoinForm extends Component<{}, FormState> {
             </Link>
           </div>
           <div className="d-flex justify-content-center">
-            {this.switchStep(this.changeStep, this.handleInputChange)}
+            {this.switchStep()}
           </div>
         </div>
       </div>
